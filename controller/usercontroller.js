@@ -21,7 +21,7 @@ module.exports.createUser = async (req, res) => {
 module.exports.DeleteById = async (req, res) => {
     try {
         const data = await User.findByIdAndDelete(req?.params?.id)
-        res.status(200).send(data)
+        res.status(200).send({data:"Deleted Sucessfully"})
     } catch (e) {
         console.log('eee++', e);
         res.status(500).json({ massage: 'internal server error' })
