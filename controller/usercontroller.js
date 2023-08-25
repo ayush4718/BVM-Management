@@ -59,12 +59,12 @@ module.exports.DeleteById = async (req, res) => {
 //     }
 // }
 
-// module.exports.updateDataById = async (req, res) => {
-//     try {
-//         const data = await User.findByIdAndUpdate(req?.body?.id, req?.body)
-//         res.status(200).send(data)
-//     } catch (e) {
-//         console.log('eee++', e);
-//         res.status(500).json({ massage: 'internal server error' })
-//     }
-// }
+module.exports.updateDataById = async (req, res) => {
+    try {
+        const data = await User.findByIdAndUpdate(req?.body?.id, req?.body)
+        res.status(200).send(data)
+    } catch (e) {
+        console.log('eee++', e);
+        res.status(500).json({ massage: 'internal server error' })
+    }
+}
